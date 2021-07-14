@@ -49,7 +49,7 @@
 <!--                    <td>--><?php //echo $product->getDateCreate() ?><!--</td>-->
 <!--                    <td>--><?php //echo $product->getDetail() ?><!--</td>-->
                     <td><a href="index.php?page=update-product&id=<?php echo $product->getId()?>" class="btn btn-warning btn-lg">Edit</a></td>
-                    <td><a  href="index.php?page=delete-product&id=<?php echo $product->getId()?>" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure you want to delete'<?php echo $product->getName()?>)">Delete</a></td>
+                    <td><a  href="index.php?page=delete-product&id=<?php echo $product->getId()?>" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                 </tr>
             <?php endforeach;
         } ?>
