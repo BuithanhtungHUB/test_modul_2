@@ -50,8 +50,8 @@ class ProductController
 
     public function search()
     {
-        $search = $_REQUEST['search'].'%';
-        $this->productModel->searchData($search);
+        $search = $_REQUEST['search'];
+        $products = $this->productModel->searchData($search);
         include_once "app/View/list.php";
     }
 }

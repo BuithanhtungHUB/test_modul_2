@@ -30,11 +30,11 @@ class ProductModel
     public function searchData($search)
     {
         try {
-            $sql="SELECT * From `products` WHERE 'name' LIKE '$search'";
+            $sql  = "SELECT * FROM `products` WHERE `name` LIKE "."'%".$search."%"."'; ";
+//            $sql="SELECT * From `products` WHERE `name` LIKE $search";
             $stmt = $this->dbConnect->connect()->query($sql);
             $stmt->execute();
-            $data = $stmt->fetchAll(PDO::FETCH_OBJ);
-            return $this->convertToObject($data);
+            return $this->convertAllToObj($stmt->fetchAll());
         }catch (\PDOException $exception){
             die($exception->getMessage());
         }
